@@ -1,11 +1,10 @@
 const squares = [...document.getElementsByClassName('square')];
-const reset = document.getElementById('reset');
-
-reset.addEventListener('click', resetGame);
-
 for (let i = 0; i < squares.length; i++) {
   squares[i].addEventListener('click', place);
 }
+
+const reset = document.getElementById('reset');
+reset.addEventListener('click', resetGame);
 
 let counter = 0;
 let turnText = document.getElementById('turn-text');
@@ -22,6 +21,7 @@ let squareNine = document.getElementById('9');
 
 function place() {
   this.removeEventListener('click', place);
+  console.log(this.id);
   if (counter % 2 === 0) {
     this.innerText = 'X';
     this.classList.add('cross');
@@ -43,11 +43,17 @@ function stopPlace() {
 }
 
 function checkWin(piece) {
+  if (counter === 8) {
+    turnText.innerText = 'Draw!';
+  }
   if (
     [...squareOne.classList].includes(piece) &&
     [...squareTwo.classList].includes(piece) &&
     [...squareThree.classList].includes(piece)
   ) {
+    [squareOne, squareTwo, squareThree].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -55,6 +61,9 @@ function checkWin(piece) {
     [...squareFive.classList].includes(piece) &&
     [...squareSix.classList].includes(piece)
   ) {
+    [squareFour, squareFive, squareSix].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -62,6 +71,9 @@ function checkWin(piece) {
     [...squareEight.classList].includes(piece) &&
     [...squareNine.classList].includes(piece)
   ) {
+    [squareSeven, squareEight, squareNine].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -69,6 +81,9 @@ function checkWin(piece) {
     [...squareFour.classList].includes(piece) &&
     [...squareSeven.classList].includes(piece)
   ) {
+    [squareOne, squareFour, squareSeven].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -76,6 +91,9 @@ function checkWin(piece) {
     [...squareFive.classList].includes(piece) &&
     [...squareEight.classList].includes(piece)
   ) {
+    [squareTwo, squareFive, squareEight].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -83,6 +101,9 @@ function checkWin(piece) {
     [...squareSix.classList].includes(piece) &&
     [...squareNine.classList].includes(piece)
   ) {
+    [squareThree, squareSix, squareNine].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -90,6 +111,9 @@ function checkWin(piece) {
     [...squareFive.classList].includes(piece) &&
     [...squareNine.classList].includes(piece)
   ) {
+    [squareOne, squareFive, squareNine].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
@@ -97,6 +121,9 @@ function checkWin(piece) {
     [...squareFive.classList].includes(piece) &&
     [...squareSeven.classList].includes(piece)
   ) {
+    [squareThree, squareFive, squareSeven].forEach(square =>
+      square.classList.add('winning')
+    );
     turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   }
@@ -108,6 +135,7 @@ function resetGame() {
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', place);
     squares[i].innerText = '';
+    squares[i].classList.remove('winning');
     squares[i].classList.remove('cross');
     squares[i].classList.remove('nought');
   }
