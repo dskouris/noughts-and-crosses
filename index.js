@@ -48,56 +48,56 @@ function checkWin(piece) {
     [...squareTwo.classList].includes(piece) &&
     [...squareThree.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareFour.classList].includes(piece) &&
     [...squareFive.classList].includes(piece) &&
     [...squareSix.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareSeven.classList].includes(piece) &&
     [...squareEight.classList].includes(piece) &&
     [...squareNine.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareOne.classList].includes(piece) &&
     [...squareFour.classList].includes(piece) &&
     [...squareSeven.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareTwo.classList].includes(piece) &&
     [...squareFive.classList].includes(piece) &&
     [...squareEight.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareThree.classList].includes(piece) &&
     [...squareSix.classList].includes(piece) &&
     [...squareNine.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareOne.classList].includes(piece) &&
     [...squareFive.classList].includes(piece) &&
     [...squareNine.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   } else if (
     [...squareThree.classList].includes(piece) &&
     [...squareFive.classList].includes(piece) &&
     [...squareSeven.classList].includes(piece)
   ) {
-    turnText.innerText = piece === 'Nought' ? 'Noughts win!' : 'Crosses win!';
+    turnText.innerText = piece === 'nought' ? 'Noughts win!' : 'Crosses win!';
     stopPlace();
   }
 }
